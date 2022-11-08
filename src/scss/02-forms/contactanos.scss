@@ -1,0 +1,43 @@
+.contactanos {
+  width: 100%;
+  max-width: 420px;
+  .ui-dialog-titlebar {
+    background-color: $white !important;
+    border: none !important;
+    padding-bottom: 0 !important;
+  }
+  .ui-dialog-content {
+    background-color: $white !important;
+    border: none !important;
+    max-height: 375px !important;
+    overflow: auto !important;
+    height: 100% !important;
+  }
+
+  .form-group {
+    margin: 1rem 0;
+
+    .contactanos-label {
+      line-height: 21px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include mq('tablet', max) {
+        font-size: 14px;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &-btn {
+    width: 160px;
+    height: 32px;
+    margin: 2rem 0;
+  }
+
+  @include mq('phone-wide', max){
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

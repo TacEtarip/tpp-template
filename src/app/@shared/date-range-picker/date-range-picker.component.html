@@ -1,0 +1,27 @@
+<div class="date-range-container">
+  <div>
+    <p-calendar
+      styleClass="calendar"
+      panelStyleClass="calendar-panel"
+      [(ngModel)]="fromDate"
+      [inline]="true"
+      dateFormat="yy-mm-dd"
+      (onSelect)="selectDateFrom($event)"
+    >
+    </p-calendar>
+  </div>
+  <div>
+    <p-calendar
+      [disabled]="fromDate == null"
+      [minDate]="minDateTo"
+      [maxDate]="maxDateTo"
+      styleClass="calendar"
+      panelStyleClass="calendar-panel"
+      [(ngModel)]="toDate"
+      [inline]="true"
+      dateFormat="yy-mm-dd"
+      (onSelect)="selectDateTo($event)"
+    >
+    </p-calendar>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <label class="label" [for]="for">{{ label }}</label>
+  <div>
+    <ng-content select="[tppInput]"></ng-content>
+  </div>
+  <div *ngIf="!disableErrorMessage" class="error-container">
+    <h6 *ngIf="errorInputMessage" class="error">
+      {{ errorInputMessage }}
+    </h6>
+  </div>
+</div>

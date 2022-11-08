@@ -1,0 +1,26 @@
+<div
+  class="card pe-1 ps-1 notification mb-3"
+  [ngClass]="{
+    'notification-green': state === 0,
+    'notification-yellow': state === 1,
+    'notification-danger': state === 2
+  }"
+  *ngIf="show"
+  [@inOutAnimation]
+>
+  <div class="card-body body-notification row">
+    <ico-close
+      class="col-sm-1 ico-primary ico-close"
+      (click)="closeNotification()"
+      *ngIf="closable"
+    ></ico-close>
+    <div class="col-sm-11 d-flex notification-body overflow-auto">
+      <div class="d-flex pb-1">
+        <ico-check class="ico-green" *ngIf="state === 0"></ico-check>
+        <ico-alert class="ico-yellow" *ngIf="state === 1"></ico-alert>
+        <ico-alert class="ico-danger" *ngIf="state === 2"></ico-alert>
+        <h5>{{ message }}</h5>
+      </div>
+    </div>
+  </div>
+</div>

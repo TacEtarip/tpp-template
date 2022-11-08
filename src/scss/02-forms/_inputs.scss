@@ -1,0 +1,52 @@
+.tpp {
+  text-align: center;
+  color: #5A6770 !important;
+
+  &-img {
+    margin: 3rem 0 2rem 0;
+  }
+
+  &-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px !important;
+    line-height: 5rem;
+    letter-spacing: 0.01em;
+  }
+
+  &-money {
+    font-size: 20px !important;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #FF6A35;
+  }
+
+  &-label {
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    margin: 0.5rem 0;
+  }
+
+  &-actions {
+    margin: 2rem 0;
+  }
+
+  &-col {
+    display: flex;
+    align-items: center;
+
+    &-right {
+      justify-content: flex-end;
+    }
+    &-left {
+      justify-content: flex-start;
+    }
+  }
+  &-close{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+
+}

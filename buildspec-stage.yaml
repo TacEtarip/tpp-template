@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+  pre_build:
+    commands:
+      - echo $CARPRTA_DIST
+      - echo $CARPRTA_HIJA
+      - echo $BUCKET
+      - echo $ID_PIPELINE
+  build:
+    commands:
+      - echo "pasar a $STAGE"
+  post_build:
+    commands:
+      - aws s3 rm s3://${BUCKET}/${CARPRTA_HIJA}/${CARPRTA_DIST}/ --recursive
+      - aws s3 sync s3://tpp-tmp/${ID_PIPELINE}/${CARPRTA_DIST}/dist/${STAGE}/ s3://${BUCKET}/${CARPRTA_HIJA}/${CARPRTA_DIST}/
+      - echo "Terminado :P"

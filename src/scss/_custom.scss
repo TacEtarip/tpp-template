@@ -1,0 +1,45 @@
+button {
+  &.btn-secondary {
+    svg-icon {
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &.btn-secondary:hover {
+    svg-icon {
+      svg {
+        fill: $secondary-color;
+      }
+    }
+  }
+
+  &.dropdown-item {
+    svg-icon {
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
+
+.modal-contenedores {
+  @media only screen and (max-width: 580px) {
+    width: 96%;
+  }
+}
+
+.modal-historial,
+.modal-visor {
+  width: 760px;
+  padding-left: 8px;
+  padding-right: 8px;
+  .ui-dialog-content {
+    &.ui-widget-content {
+      overflow-x: hidden;
+    }
+  }
+  @media only screen and (max-width: 580px) {
+    width: 96%;
+  }
+}

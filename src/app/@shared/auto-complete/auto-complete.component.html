@@ -1,0 +1,22 @@
+<div>
+  <div class="inner-addon left-addon">
+    <p-autoComplete
+      styleClass="w-full"
+      appKeypressRestricted
+      [regexExp]="regexKeyValidator"
+      [inputStyleClass]="
+        control.invalid
+          ? 'form-control input-fill shadow-1 error'
+          : 'form-control input-fill shadow-1'
+      "
+      [placeholder]="placeHolder"
+      [formControl]="control"
+      [suggestions]="results"
+      (completeMethod)="completeMethod.emit($event)"
+      (onSelect)="resultSelected.emit($event)"
+      [field]="objectField"
+    ></p-autoComplete>
+    <ico-search class="icon ico-disabled"></ico-search>
+    <h3 class="error-text" *ngIf="control.invalid">{{ errorMessage }}</h3>
+  </div>
+</div>

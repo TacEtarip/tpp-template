@@ -1,0 +1,13 @@
+.table-header {
+  display: grid;
+  width: 100%;
+  & > div {
+    span {
+      text-align: center;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 0.6rem;
+  }
+}

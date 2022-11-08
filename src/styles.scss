@@ -1,1 +1,608 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'scss/main';
+
+.breaker {
+  flex-basis: 100%;
+}
+
+.leading-info {
+  flex: 1;
+}
+
+.title {
+  font-size: 22px !important;
+  font-family: $font-bold !important;
+  color: $bluegray;
+  line-height: 33px;
+  font-weight: 600;
+
+  &.content-title {
+    padding: 0;
+    font-weight: bold;
+    font-size: 26px !important;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    @include mq('phone-wide', max) {
+      font-size: 18px !important;
+      margin-top: 1rem;
+    }
+  }
+
+  &.primary {
+    color: $primary-color;
+  }
+}
+
+.subtitle {
+  color: $bluegray;
+  font-weight: bold;
+  font-size: 14px !important;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+}
+
+* {
+  scrollbar-color: $primary-color #c2cfe0;
+  scrollbar-width: thin;
+  scrollbar-arrow-color: #c2cfe0;
+}
+
+::placeholder {
+  color: $gray !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $gray !important;
+}
+
+::-ms-input-placeholder {
+  color: $gray !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+
+  &-thumb {
+    background-color: $primary-color;
+    border-radius: 30px;
+  }
+
+  &-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #c2cfe0;
+    box-shadow: 0 2px 2px rgba(21, 76, 131, 0.15);
+    border-radius: 8px;
+  }
+}
+
+.sidebar-btn .p-button-text {
+  display: none !important;
+}
+
+button {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.animate-all {
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// ===============  ICON INPUT ============ //
+.inner-addon {
+  position: relative;
+
+  .icon {
+    position: absolute;
+    padding: 8px 15px;
+    top: 0;
+    pointer-events: none;
+  }
+}
+
+.left-addon {
+  .icon {
+    left: 0;
+  }
+
+  input {
+    padding-left: 30px;
+  }
+}
+
+.right-addon {
+  .icon {
+    right: 0;
+  }
+
+  input {
+    padding-right: 30px;
+  }
+}
+
+// =================================== //
+.circle {
+  border-radius: 100% !important;
+
+  &-sm {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.anulado-btn {
+  .btn-close {
+    svg {
+      height: 10px;
+    }
+  }
+}
+
+.notification {
+  position: relative;
+  border-radius: 10px;
+  border: solid 1px;
+
+  ico-close {
+    top: 40%;
+    display: flex;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  &-body {
+    h5 {
+      padding-left: 1rem;
+      margin-top: 1px;
+    }
+  }
+
+  &-primary {
+    border-color: $primary-color;
+  }
+
+  &-secondary {
+    border-color: $secondary-color;
+  }
+
+  &-green {
+    border-color: $green;
+  }
+
+  &-yellow {
+    border-color: $yellow;
+  }
+
+  &-danger {
+    border-color: $red;
+  }
+}
+
+// ======== TRAZABILIDAD =====
+
+.input-tpp {
+  background: #ffffff !important;
+  border: 0.5px solid #c2cfe0 !important;
+  border-radius: 8px !important;
+
+  &::-webkit-input-placeholder {
+    color: $gray-2;
+  }
+
+  &::-moz-placeholder {
+    color: $gray-2;
+  }
+
+  &:-ms-input-placeholder {
+    color: $gray-2;
+  }
+
+  &::placeholder {
+    color: $gray-2;
+  }
+}
+
+.border-right {
+  border-right: 1px solid $gray-2 !important;
+
+  @include mq('phone-wide', max) {
+    border-right: 0 !important;
+  }
+}
+
+.input-fill {
+  border-bottom: 1px solid $gray-2 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &.error {
+    border-color: $red !important;
+  }
+}
+
+.error-text {
+  margin-top: 4px;
+  color: $red;
+  font-size: 12px;
+}
+
+.form-check {
+  margin-bottom: 0.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0rem;
+  }
+}
+
+.form-check-input {
+  border: 2px solid $primary-color;
+
+  &:checked {
+    background-color: $white;
+    border-color: $secondary-color;
+  }
+
+  &:checked[type='checkbox'] {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+  }
+
+  &:focus {
+    border-color: $secondary-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(255 106 53 / 39%);
+  }
+}
+
+.calendar {
+  .p-datepicker table td > span.p-highlight {
+    color: #ffffff;
+    background: $secondary-color;
+  }
+
+  &.p-calendar {
+    width: 360px;
+    max-width: none;
+
+    input {
+      border-radius: 7px;
+      border: 0.5px solid #c2cfe0 !important;
+      width: 100%;
+    }
+  }
+
+  .p-datepicker {
+    border: none !important;
+
+    table {
+      td {
+        & > a {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .panel {
+    right: 0 !important;
+    left: initial !important;
+  }
+
+  .p-datepicker table td.p-datepicker-today > span.p-highlight {
+    color: #ffffff;
+    background-color: $secondary-color !important;
+  }
+
+  .p-datepicker-current-day {
+    & > .p-state-active {
+      background-color: $secondary-color !important;
+      color: $white !important;
+      border-radius: 100%;
+    }
+  }
+
+  .p-datepicker-today {
+    & > a {
+      background-color: transparent !important;
+      border-radius: 100%;
+    }
+  }
+
+  .p-datepicker-title {
+    color: $secondary-color !important;
+    font-weight: 600;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    letter-spacing: 0.01em;
+  }
+
+  .p-datepicker-next-icon,
+  .p-datepicker-prev-icon {
+    color: $secondary-color;
+  }
+}
+
+.filtrar {
+  .ui {
+    &-tabmenu {
+      &-nav {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-menuitem {
+      position: relative;
+      min-width: 10em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-icon {
+        font-size: 25px !important;
+        color: $secondary-color !important;
+      }
+    }
+  }
+}
+
+input {
+  height: 32px;
+}
+
+.generar {
+  &-pago {
+    width: 1210px;
+
+    label {
+      font-weight: bold;
+    }
+  }
+
+  &-orden {
+    max-width: 500px;
+  }
+}
+
+.font-normal {
+  font-weight: normal !important;
+}
+
+.modal-title {
+  color: $primary-color;
+  font-family: $font-bold;
+  font-size: 22px !important;
+  font-weight: bold;
+}
+
+.wrapper {
+  margin: 1em 2em;
+}
+
+.wrapper:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.wrapper select {
+  position: absolute;
+  top: -1000em;
+}
+
+.wrapper label,
+.wrapper #select-box,
+.wrapper button {
+  float: left;
+  margin-right: 1em;
+}
+
+.wrapper label {
+  font-weight: bold;
+  padding-top: 0.2em;
+}
+
+.wrapper #select-box {
+  width: 12em;
+  position: relative;
+}
+
+.wrapper #select-box #trigger {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 0.3em;
+  height: 1.4em;
+  line-height: 1.4;
+}
+
+.wrapper #select-box #choices {
+  width: 100%;
+  background: #c14545;
+  color: #fff;
+  position: absolute;
+  top: 1.4em;
+  left: 0;
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper #select-box #choices li {
+  padding: 0.3em;
+  margin-bottom: 0.3em;
+  display: block;
+  cursor: pointer;
+}
+
+.wrapper #select-box #choices li:hover {
+  background: #000;
+}
+
+.custom-select {
+  position: absolute;
+  top: -1000em;
+
+  &-container {
+    &:after {
+      content: '.';
+      display: block;
+      clear: both;
+      height: 0;
+    }
+  }
+
+  &-list {
+    width: 100%;
+    background: $white;
+    color: $primary-color;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    display: none;
+    margin: 0;
+    list-style: none;
+    transition: all 0.6s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    padding: 0.75rem;
+
+    li {
+      padding: 0.75rem 0.3em;
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        background: $background;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &-box {
+    width: 100%;
+    position: relative;
+  }
+
+  &-text {
+    border-radius: 7px;
+    border: 0.5px solid $gray-2 !important;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      right: 0;
+      background: url(/assets/images/select-arrow.svg) no-repeat center;
+      transition: all 0.6s ease;
+      background-size: contain;
+    }
+
+    &.active {
+      &:after {
+        transform: rotate(180deg);
+        transition: all 0.6s ease;
+      }
+    }
+  }
+}
+
+@include mq('desktop', max) {
+  .none-lg {
+    display: none;
+  }
+}
+
+@include mq('tablet', max) {
+  .toMobile {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+      padding-right: 0;
+      padding-top: 0;
+    }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+
+    td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    td:before {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.dropdown-menu[x-placement^='top']:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 88%;
+  margin-left: -7px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid $bluegray;
+  border-bottom: 0px;
+}
+
+.dropdown-menu[x-placement^='bottom']:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 88%;
+  margin-left: -7px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid $bluegray;
+  border-top: 0px;
+}

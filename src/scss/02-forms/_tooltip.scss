@@ -1,0 +1,186 @@
+.tooltips {
+    position: relative;
+    padding: 0.5rem;
+    span {
+        position: absolute;
+        line-height: 30px;
+        text-align: center;
+        visibility: hidden;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 0.01em;
+        &.sm {
+            height: 30px;
+            width: 75px;
+        }
+        &.lg {
+            width: 330px;
+            height: 55px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            margin-left: -7px;
+            width: 0;
+            height: 0;
+        }
+    }
+    &.bottom {
+        &:hover span {
+            left: -19px;
+            top: 100%;
+        }
+    }
+    &.top {
+        &:hover span {
+            left: -19px;
+            bottom: 100%;
+        }
+    }
+    &.right,
+    &.left {
+        &:hover span {
+            top: 0;
+        }
+    }
+    &.right {
+        &:hover span {
+            left: 100%;
+        }
+    }
+    &.left {
+        &:hover span {
+            right: 100%;
+        }
+    }
+    &.arrow-bluegray {
+        &.bottom {
+            span:after {
+                bottom: 100%;
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-bottom: 5px solid $bluegray;
+            }
+        }
+        &.top {
+            span:after {
+                top: 100%;
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-top: 5px solid $bluegray;
+            }
+        }
+        &.right {
+            span:after {
+                left: 0;
+                border-right: 5px solid $bluegray;
+                border-bottom: 5px solid transparent;
+                border-top: 5px solid transparent;
+                border-left: 2px solid transparent;
+            }
+        }
+        &.left {
+            span:after {
+                right: -7%;
+                border-bottom: 5px solid transparent;
+                border-top: 5px solid transparent;
+                border-left: 5px solid $bluegray;
+            }
+        }
+    }
+}
+
+.invalid-tooltip {
+    background: #FFFFFF;
+    top: auto;
+    border: 1px solid #F7685B;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+    color: $red;
+    padding: 0.5rem;
+    width: 95%;
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+    }
+    &.bottom {
+        top: 100%;
+        margin-top: 0.75rem;
+        &:after,
+        &:before {
+            left: 50%;
+            border-right: 11px solid transparent;
+            border-left: 11px solid transparent;
+        }
+        &:before {
+            border-bottom: 11px solid $red;
+            top: -11px;
+        }
+        &:after {
+            border-bottom: 11px solid $white;
+            top: -10px;
+        }
+    }
+    &.top {
+        bottom: 100%;
+        margin-bottom: 0.75rem;
+        &:after,
+        &:before {
+            left: 50%;
+            border-right: 11px solid transparent;
+            border-left: 11px solid transparent;
+        }
+        &:before {
+            border-top: 11px solid $red;
+            bottom: -11px;
+        }
+        &:after {
+            border-top: 11px solid $white;
+            bottom: -10px;
+        }
+    }
+}
+
+.dropdown-menu {
+    margin-top: 0.5rem !important;
+    background: $bluegray;
+    border-radius: 5px;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 88%;
+        margin-left: -7px;
+        width: 0;
+        height: 0;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-bottom: 5px solid $bluegray;
+    }
+    .dropdown-item {
+        color: $white !important;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        img {
+            margin: 0 0.75rem 0 0;
+        }
+        &:hover {
+            background-color: $primary-color;
+        }
+        &.disabled-menu {
+            color: $primary-color !important;
+        }
+    }
+}
+
+.tooltips:hover {
+    span {
+        visibility: visible;
+        margin-left: 0;
+        z-index: 999;
+    }
+}

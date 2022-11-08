@@ -1,0 +1,21 @@
+@import '../../../scss/01-elements/variables';
+
+.container {
+  width: 100%;
+}
+
+.label {
+  font-family: $font-bold;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.error-container {
+  height: 11px;
+  margin-top: 5px;
+  .error {
+    font-family: $font-regular;
+    font-size: 10px;
+    color: $danger;
+  }
+}

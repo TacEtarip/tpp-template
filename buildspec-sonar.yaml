@@ -1,0 +1,42 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+  pre_build:
+    commands:
+      - sudo yum update -y
+      - sudo yum install -y jq
+      - echo "Se instalo jq"
+      - echo "instalando chrome"
+      - sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+      - sudo yum install -y ./google-chrome-stable_current_x86_64.rpm
+      - sudo ln -s /usr/bin/google-chrome-stable /usr/bin/chromium
+      - export CHROME_BIN=$(which google-chrome)
+      - echo "instalando sonarqube scanner"
+      - npm install -g sonarqube-scanner
+
+  build:
+    commands:
+      - echo "descargando dependencias"
+      - npm i
+      - echo "compilando ..."
+      - npm run build
+      # - npm run test -- -cc --watch=false --browsers=HeadlessChrome --code-coverage true
+      - echo "Termino test, comenzando sonar"
+      - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.projectName=$REPO_NAME -Dsonar.projectKey=$REPO_NAME -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.host.url=$SONAR_URL
+      - sleep 5
+      - curl -u$SONAR_TOKEN:"" $SONAR_URL/api/qualitygates/project_status?projectKey=$REPO_NAME >result.json
+      - if [ $(cat result.json | jq -r '.projectStatus.conditions[] | select(.metricKey=="reliability_rating") | .status') = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+      - if [ $(cat result.json | jq -r '.projectStatus.conditions[] | select(.metricKey=="sqale_rating") | .status') = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+      - if [ $(cat result.json | jq -r '.projectStatus.conditions[] | select(.metricKey=="duplicated_lines_density") | .status') = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+      - if [ $(cat result.json | jq -r '.projectStatus.conditions[] | select(.metricKey=="security_rating") | .status') = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+      #- if [ $(cat result.json | jq -r '.projectStatus.conditions[] | select(.metricKey=="coverage") | .status') = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+      - cat result.json
+      #- if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+  post_build:
+    commands:
+      - ls -l
+      # - find coverage

@@ -1,0 +1,30 @@
+$breakpoints: ("phone": 400px, "phone-wide": 480px, "phablet": 560px, "tablet-small": 640px, "tablet": 992px, "laptop": 1025px, //desktop Manya
+"desktop-standard":1377px, "desktop": 1200px, "desktop-wide": 1441px);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type==max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin center-elm($horizontal: true, $vertical: true) {
+    position: absolute !important;
+    @if ($horizontal and $vertical) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @else if ($horizontal) {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    @else if ($vertical) {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}

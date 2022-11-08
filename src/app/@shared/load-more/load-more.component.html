@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12 text-center mt-4 mb-4">
+    <ico-cargar class="ico-secondary"></ico-cargar>
+    <span
+      class="pointer cargar ms-2"
+      [ngClass]="{ disable: !moreToLoad }"
+      (click)="loadMore.emit()"
+      >Cargar más</span
+    >
+  </div>
+</div>
+<!-- <button
+  *ngIf="useGoToTop"
+  class="btn btn-secondary circle circle-sm"
+  type="button"
+  (click)="scrollToTop.emit()"
+>
+  <ico-doble-arrow class="ico-white"></ico-doble-arrow>
+</button> -->

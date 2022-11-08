@@ -1,0 +1,152 @@
+.text {
+  &-primary {
+    color: $primary-color !important;
+  }
+  &-secondary {
+    color: $secondary-color !important;
+  }
+  &-warning {
+    color: $yellow !important;
+  }
+  &-danger {
+    color: $red !important;
+  }
+  &-sucess {
+    color: $green !important;
+  }
+  &-white {
+    color: $white !important;
+  }
+  &-disable {
+    color: $disabled !important;
+  }
+  &-justify {
+    text-align: justify;
+  }
+}
+
+.bg {
+  &-primary {
+    background-color: $primary-color !important;
+  }
+  &-secondary {
+    background-color: $secondary-color !important;
+  }
+  &-lightblue {
+    background-color: $lightblue;
+  }
+  &-warning {
+    background-color: $yellow !important;
+  }
+  &-danger {
+    background-color: $red !important;
+  }
+  &-success {
+    background-color: $green !important;
+  }
+  &-white {
+    background-color: $white !important;
+  }
+  &-disabled {
+    background-color: $gray-2 !important;
+  }
+  &-gray {
+    background-color: $gray !important;
+  }
+  &-bluegray {
+    Background-color: $bluegray !important;
+  }
+}
+
+.border {
+  &-primary {
+    &-sm {
+      border: 1px solid $primary-color !important;
+    }
+    &-md {
+      border: 2px solid $primary-color !important;
+    }
+    &-lg {
+      border: 3px solid $primary-color !important;
+    }
+  }
+  &-secondary {
+    &-sm {
+      border: 1px solid $secondary-color !important;
+    }
+    &-md {
+      border: 2px solid $secondary-color !important;
+    }
+    &-lg {
+      border: 3px solid $secondary-color !important;
+    }
+  }
+  &-warning {
+    &-sm {
+      border: 1px solid $yellow;
+    }
+    &-md {
+      border: 2px solid $yellow;
+    }
+    &-lg {
+      border: 3px solid $yellow;
+    }
+  }
+  &-danger {
+    &-sm {
+      border: 1px solid $red;
+    }
+    &-md {
+      border: 2px solid $red;
+    }
+    &-lg {
+      border: 3px solid $red;
+    }
+    background-color: $red;
+  }
+  &-sucess {
+    &-sm {
+      border: 1px solid $green;
+    }
+    &-md {
+      border: 2px solid $green;
+    }
+    &-lg {
+      border: 3px solid $green ;
+    }
+  }
+
+  &-disable {
+      &-sm {
+        border: 1px solid $secondary-color;
+      }
+      &-md {
+        border: 2px solid $secondary-color;
+      }
+      &-lg {
+        border: 3px solid $secondary-color;
+      }
+  }
+  &-gray {
+    &-sm {
+      border: 1px solid $gray;
+    }
+    &-md {
+      border: 2px solid $gray;
+    }
+    &-lg {
+      border: 3px solid $gray;
+    }
+  }
+  &-bluegray {
+    &-sm {
+      border: 1px solid $bluegray;
+    }
+    &-md {
+      border: 2px solid $bluegray;
+    }
+    &-lg {
+      border: 3px solid $bluegray;
+    }
+  }
+}

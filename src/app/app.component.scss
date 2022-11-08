@@ -1,0 +1,130 @@
+.table th,
+.table td {
+  padding: 1rem !important;
+}
+
+.card {
+  font-size: 80%;
+  border: 1px solid #edf2f5;
+}
+
+.card.titulo {
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #4e6072;
+}
+
+.seleccionado {
+  color: #00b3ca;
+  background-color: #dff5f7;
+  border: 1px solid;
+  transition: all 0.3s ease;
+}
+
+.truncate-table {
+  max-width: inherit !important;
+}
+
+.btn-tpp {
+  color: #fff;
+  background-color: #f37720;
+  border-color: #f37720;
+}
+
+.btn-tpp:hover,
+.btn-tpp:focus,
+.btn-tpp:active {
+  border-color: #d5681c;
+  background-color: #d5681c;
+}
+
+.sombreado_tr_tabla {
+  background-color: #f39d005c !important;
+}
+
+.table {
+  width: 99% !important;
+}
+
+table.table.table-general thead th {
+  background-color: #eff0f2 !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  border-top: none !important;
+  padding-top: 5rem solid #eff0f2 !important;
+}
+
+.table th,
+.table td {
+  padding-bottom: 1px !important;
+  padding-top: 5px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.table tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.table tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+table .sombreado_tr:hover {
+  background-color: #f39d005c;
+  cursor: pointer;
+}
+
+#nuevoGenerarOS {
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .completo_pantalla {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .mitad_pantalla {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .ocultar-li {
+    display: none;
+  }
+}
+
+.contenido_completo {
+  width: 100% !important;
+}
+
+table.table.contenido_completo thead th {
+  background-color: #eff0f2 !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  border-top: none !important;
+  padding-top: 5rem solid #eff0f2 !important;
+}
+
+table .sombreado_tr:hover {
+  background-color: #f39d005c;
+  cursor: pointer;
+}
+
+input {
+  margin: 0.4rem 0;
+}
+
+.scrollBody {
+  display: block;
+  max-height: 150px;
+}

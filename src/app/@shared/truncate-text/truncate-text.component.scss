@@ -1,0 +1,5 @@
+@import '../../../scss/01-elements/variables';
+
+::ng-deep .p-dialog .p-dialog-footer button {
+  color: $secondary-color;
+}

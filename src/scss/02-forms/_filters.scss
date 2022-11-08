@@ -1,0 +1,261 @@
+.filter {
+  background: white;
+}
+.filter-inner-container {
+  display: grid;
+  grid-template-columns: 200px minmax(300px, auto);
+}
+
+@media only screen and (max-width: 479px) {
+  .filter {
+    top: 70%;
+    right: 1%;
+    max-width: 380px;
+  }
+}
+
+.w-70-lg {
+  @include mq('tablet', min) {
+    width: 70%;
+  }
+}
+
+@include mq('phone-wide', min) {
+  .filter-group-row {
+    .filter-btn {
+      margin-top: 0.5rem;
+    }
+  }
+  .filter-search {
+    margin-top: 1rem;
+  }
+}
+
+.filter-search {
+  @include mq('tablet', min) {
+    padding-left: 0;
+    margin-top: 0rem;
+  }
+  @media (min-width: 768px) {
+    .filter-search {
+      margin-top: 0;
+    }
+  }
+}
+
+.filter-actions {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-actions {
+    flex-direction: column-reverse;
+  }
+}
+
+.filter-actions.f-comision {
+  justify-content: space-between !important;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-title {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) {
+  .col-xsm-7 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+.filter-title-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-title-mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-download {
+    display: none;
+  }
+}
+
+.filter-download-mini {
+  display: none;
+  height: 35px;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-download-mini {
+    display: inline-block;
+  }
+}
+
+.filter-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+
+.filter-group-row {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-group-row {
+    flex-direction: column-reverse;
+  }
+}
+
+.filter-btn {
+  text-align: right;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter-btn {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.filter-header {
+  margin: 1rem 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.filter-header .nav-item {
+  margin-bottom: 0.75rem;
+}
+
+.filter-header .nav-item .nav-link {
+  background-color: transparent;
+  text-align: left;
+  font-family: $font-bold;
+  color: #323c477e;
+  align-items: center;
+}
+
+.filter-header .nav-item .nav-link.active,
+.filter-header .nav-item .nav-link:hover {
+  border-radius: 10px;
+  background: #f5f6f8;
+  color: #323c47;
+}
+
+.filter-header .nav-item .nav-link.dark,
+.filter-header .nav-item .nav-link.dark:hover {
+  border-radius: 10px;
+  color: #323c47;
+  border-left: 2px solid #ff6a35;
+  border-bottom-left-radius: 0%;
+  border-top-left-radius: 0%;
+  .ico-secondary path {
+    fill: #ffffff !important;
+  }
+}
+
+.filter-header .nav-item .nav-link:focus {
+  outline: none;
+}
+
+.filter-content .form-check-label {
+  display: block;
+  text-align: left;
+}
+
+.filter-body {
+  width: 100%;
+  @media only screen and (max-width: 479px) {
+    width: 100%;
+  }
+}
+
+.filter .arrow-top {
+  position: relative;
+}
+
+.filter .arrow-top:after {
+  content: '';
+  position: absolute;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  top: -8px;
+  right: 7%;
+}
+
+@media only screen and (max-width: 479px) {
+  .filter .arrow-top:after {
+    top: -8px;
+    right: 14%;
+  }
+  .ui-datepicker .ui-datepicker-next {
+    right: 3em;
+  }
+  .ui-datepicker .ui-datepicker-prev {
+    left: 3em;
+  }
+}
+
+.filter.calendar {
+  min-width: 850px;
+  @media only screen and (max-width: 479px) {
+    min-width: unset;
+  }
+}
+
+.input-group .inner-addon .icon {
+  padding: 5px 15px;
+}
+
+.input-group .inner-addon.w-input {
+  width: calc(100% - 150px);
+}
+
+.input-group .inner-addon.w-input .form-control {
+  background: #ffffff !important;
+  border: 0.5px solid #c2cfe0 !important;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 35px;
+}
+
+.accordion {
+  .card-body {
+    padding: 0;
+  }
+}
+
+.form-check-input {
+  border: 2px solid #ff6a35;
+}
+
+.form-check-input[type='radio']:checked {
+  background-color: #ff6a35;
+  border-color: #ff6a35;
+}
+
+.nav-pills {
+  flex-direction: column;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}

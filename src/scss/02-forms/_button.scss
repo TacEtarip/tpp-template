@@ -1,0 +1,110 @@
+.btn-outline-secondary {
+    background: $secondary-color !important;
+    border-color: $secondary-color !important;
+    border-radius: 10px;
+    &:hover {
+        background: $white !important;
+        color: $secondary-color !important;
+        border-color: $secondary-color !important;
+        .ico-white {
+            path {
+                fill: $secondary-color;
+            }
+        }
+    }
+}
+
+.btn-light {
+    background-color: $white;
+    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.12);
+    border-radius: 4px;
+}
+
+.btn {
+    box-shadow: 0 4px 10px rgba(61, 61, 61, 0.24);
+    border-radius: 8px !important;
+    font-family: $font-bold !important;
+    font-weight: bold !important;
+    &.col-sm-10 {
+        border-radius: 100% !important;
+    }
+    &-sm {
+        width: 50px;
+        height: 32px;
+    }
+    &-md {
+        width: 112px !important;
+        height: 32px !important;
+    }
+    &-lg {
+        width: 130px;
+        height: 35px;
+    }
+    &-xl {
+        width: 288px;
+        height: 32px;
+    }
+    &-ml {
+        width: 208px;
+        height: 48px;
+    }
+    &-auto-x {
+        width: auto;
+    }
+    &-auto-y {
+        height: auto;
+    }
+    &-primary {
+        background: $primary-color !important;
+        border: 1px solid $primary-color !important;
+        border-radius: 10px;
+        &:hover {
+            background: $white !important;
+            color: $primary-color !important;
+            .ico-white {
+                path {
+                    fill: $primary-color;
+                }
+            }
+        }
+    }
+    &-secondary {
+        background: $secondary-color !important;
+        border: 1px solid $secondary-color !important;
+        border-radius: 10px;
+        &:hover {
+            background: $white !important;
+            color: $secondary-color !important;
+            .ico-white {
+                path {
+                    fill: $secondary-color;
+                }
+            }
+        }
+    }
+    &-bluegray {
+        background: $bluegray !important;
+        border-radius: 10px;
+        border: 1px solid $bluegray !important;
+        color: $white;
+        &:hover {
+            background: $white !important;
+            color: $bluegray !important;
+            .ico-white {
+                path {
+                    fill: $bluegray;
+                }
+            }
+        }
+    }
+    &-outline-primary {
+        background: none !important;
+        border-radius: 10px;
+        border: 1px solid $bluegray !important;
+        color: $bluegray !important;
+        &:hover {
+            background: $bluegray !important;
+            color: $white !important;
+        }
+    }
+}

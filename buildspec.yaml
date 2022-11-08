@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+  pre_build:
+    commands:
+      - echo $CARPRTA_DIST
+      - echo $ID_PIPELINE
+  build:
+    commands:
+      - echo "descargando dependencias"
+      - npm i
+      - echo "compilando ..."
+      - npm run build:${BUILD}  -- --output-path=dist/${BUILD}
+      - ls -l
+      - echo "compilado :D"
+  post_build:
+    commands:
+      - aws s3 cp dist/ s3://tpp-tmp/${ID_PIPELINE}/${CARPRTA_DIST}/dist/  --recursive
+      - echo "terminado :P"

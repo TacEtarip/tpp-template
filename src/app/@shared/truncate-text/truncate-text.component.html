@@ -1,0 +1,34 @@
+<ng-container>
+  {{ textToShow }}
+  <em
+    (click)="showFullComment = true"
+    pTooltip="Ver comentario"
+    *ngIf="text.length > maxLength"
+    style="
+      font-size: 2rem;
+      color: #ff6a35;
+      vertical-align: middle;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    "
+    class="pi pi-ellipsis-h"
+  ></em>
+</ng-container>
+<p-dialog
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  header="Comentario"
+  [(visible)]="showFullComment"
+  [style]="{ width: '35vw' }"
+>
+  <p>{{ text }}</p>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="showFullComment = false"
+      label="Cerrar"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>

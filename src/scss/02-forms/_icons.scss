@@ -1,0 +1,121 @@
+.ico {
+  path {
+    fill: $disabled;
+  }
+  circle,
+  line {
+    stroke: $disabled;
+  }
+  &-primary {
+    path {
+      fill: $primary-color;
+    }
+    circle,
+    line {
+      stroke: $primary-color;
+    }
+  }
+  &-secondary {
+    path {
+      fill: $secondary-color;
+    }
+    circle,
+    line {
+      stroke: $secondary-color;
+    }
+  }
+  &-blugray {
+    path {
+      fill: $bluegray;
+    }
+    circle,
+    line {
+      stroke: $bluegray;
+    }
+  }
+  &-green {
+    path {
+      fill: $green;
+    }
+    circle,
+    line {
+      stroke: $green;
+    }
+  }
+
+  &-danger {
+    path {
+      fill: $red;
+    }
+    circle,
+    line {
+      stroke: $red;
+    }
+  }
+
+  &-darkgreen {
+    path {
+      fill: $darkgreen;
+    }
+    circle,
+    line {
+      stroke: $darkgreen;
+    }
+  }
+
+  &-yellow {
+    path {
+      fill: $yellow;
+    }
+    circle,
+    line {
+      stroke: $yellow;
+    }
+  }
+
+  &-disabled {
+    path {
+      fill: $gray-2;
+    }
+    circle,
+    line {
+      stroke: $gray-2;
+    }
+  }
+
+  &-gray {
+    width: 35px;
+    height: 35px;
+    path {
+      fill: $gray-2;
+    }
+
+    &.active {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &-white {
+    width: 30px;
+    height: 30px;
+    path {
+      fill: $white;
+    }
+  }
+
+  &-menu {
+    svg {
+      width: 19px;
+      height: 16px;
+    }
+  }
+
+  &-sm {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

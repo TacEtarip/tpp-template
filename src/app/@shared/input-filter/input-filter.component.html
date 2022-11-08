@@ -1,0 +1,19 @@
+<div class="bg-white">
+  <div class="inner-addon left-addon">
+    <input
+      class="form-control input-fill shadow-1"
+      [formControl]="inputControl"
+      autocomplete="off"
+      [type]="type"
+      id="inputControl"
+      [placeholder]="placeholder"
+      [ngClass]="{
+        error: inputControl.invalid && this.inputControl.touched
+      }"
+    />
+    <ico-search class="icon ico-disabled"></ico-search>
+    <h3 class="error-text" *ngIf="inputControl.invalid">
+      {{ errorMessage }}
+    </h3>
+  </div>
+</div>

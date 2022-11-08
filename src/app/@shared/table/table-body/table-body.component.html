@@ -1,0 +1,48 @@
+<div>
+  <div>
+    <div
+      (click)="clickOnRow.emit(row)"
+      *ngFor="let row of list; let y = index"
+      class="card pr-1 pl-1 br-15 mb-3 shadow-1 table-row"
+      [ngStyle]="{
+        position: 'initial',
+        background: y % 2 === 0 ? 'white' : '#EBEEF3'
+      }"
+    >
+      <div class="card-body">
+        <div
+          [ngStyle]="{
+            'grid-template-columns': gridTemplateColumns,
+            'min-height': '35px'
+          }"
+          class="table-body lista"
+        >
+          <ng-container *ngFor="let col of header; let i = index">
+            <div
+              [ngStyle]="{
+                height: '100%',
+                display: 'flex',
+                'align-items': 'center'
+              }"
+              [ngClass]="{
+                'border-right': header.length !== i + 1
+              }"
+            >
+              <div *ngIf="getContent(col.property) as content">
+                <ng-container
+                  *ngTemplateOutlet="
+                    content.templateRef;
+                    context: { $implicit: row[content.key], row: y, ot: row }
+                  "
+                >
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <app-loading-table *ngIf="loading"></app-loading-table>
+  </div>
+</div>
