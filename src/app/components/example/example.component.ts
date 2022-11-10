@@ -12,4 +12,31 @@ export class ExampleComponent implements OnInit {
   ngOnInit(): void {
     this.notificationService.success('Good');
   }
+
+  // @BlockUI() blockUI: NgBlockUI;
+
+  // constructor(
+  //   private activatedRoute: ActivatedRoute,
+  //   private userDataService: UserDataService,
+  //   private notificationService: NotificationService
+  // ) {}
+
+  // ngOnInit(): void {
+  //   this.blockUI.start('Espere...');
+
+  //   const rawToken = this.activatedRoute.snapshot.paramMap.get('token');
+  //   const refreshToken =
+  //     this.activatedRoute.snapshot.paramMap.get('refreshToken');
+  //   const userId = this.activatedRoute.snapshot.paramMap.get('userId');
+
+  //   this.blockUI.stop();
+
+  //   if (rawToken && refreshToken && userId) {
+  //     this.userDataService.setToken(rawToken);
+  //     this.userDataService.setUser(userId);
+  //     this.userDataService.setRefreshToken(refreshToken);
+  //   }
+
+  //   this.notificationService.warn(NO_TOKEN_MESSAGE);
+  // }
 }

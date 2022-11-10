@@ -27,12 +27,21 @@ export class TableBodyComponent implements OnInit {
 
   @Output() clickOnRow = new EventEmitter<any>();
 
+  @Input() rowsClickable = false;
+
   gridTemplateColumns = '';
 
   ngOnInit(): void {
     for (const h of this.header) {
       this.gridTemplateColumns += `${h.col} `;
     }
+  }
+
+  emitRowClick(row: any) {
+    if (this.rowsClickable === false) {
+      return;
+    }
+    this.clickOnRow.emit(row);
   }
 
   getContent(keyToSearch: string) {

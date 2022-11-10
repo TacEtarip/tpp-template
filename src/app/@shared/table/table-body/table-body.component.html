@@ -1,9 +1,10 @@
 <div>
   <div>
     <div
-      (click)="clickOnRow.emit(row)"
+      (click)="emitRowClick(row)"
       *ngFor="let row of list; let y = index"
-      class="card pr-1 pl-1 br-15 mb-3 shadow-1 table-row"
+      class="card pr-1 pl-1 br-15 mb-3 shadow-1"
+      [ngClass]="{ 'table-row': rowsClickable }"
       [ngStyle]="{
         position: 'initial',
         background: y % 2 === 0 ? 'white' : '#EBEEF3'
@@ -28,11 +29,14 @@
                 'border-right': header.length !== i + 1
               }"
             >
-              <div *ngIf="getContent(col.property) as content">
+              <div
+                [ngStyle]="{ width: '100%' }"
+                *ngIf="getContent(col.property) as content"
+              >
                 <ng-container
                   *ngTemplateOutlet="
                     content.templateRef;
-                    context: { $implicit: row[content.key], row: y, ot: row }
+                    context: { $implicit: row[content.key], index: y, row: row }
                   "
                 >
                 </ng-container>

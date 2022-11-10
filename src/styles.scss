@@ -606,3 +606,14 @@ input {
   border-bottom: 5px solid $bluegray;
   border-top: 0px;
 }
+
+
+.p-inputswitch-checked .p-inputswitch-slider {
+  background: $secondary-color !important;
+}
+
+.p-inputswitch.p-focus .p-inputswitch-slider {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #ffae93 !important;
+}

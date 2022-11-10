@@ -51,3 +51,11 @@ export const ES_CALENDAR = {
 export const MONTHS_RANGE = 3;
 
 export const LENGTH_TO_ALLOW_AUTO_COMPLETE = 4;
+
+export const JWT_TOKEN = 'idToken';
+
+export const REFRESH_TOKEN = 'refreshToken';
+
+export const USER = 'username';
+
+export const NO_TOKEN_MESSAGE = 'A token was not send';

@@ -5,6 +5,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { TooltipModule } from 'primeng/tooltip';
 import { AutoCompleteFilterComponent } from './auto-complete-filter/auto-complete-filter.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
@@ -56,6 +57,7 @@ const PRIME_MODULES = [
   AutoCompleteModule,
   CalendarModule,
   DialogModule,
+  OverlayPanelModule,
 ];
 
 const MODULES = [CommonModule, IconsModule, ReactiveFormsModule];
